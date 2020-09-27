@@ -66,10 +66,9 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="top-right links">
-                <a href="{{ route('wishlist') }}">WishList</a>
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/admin') }}">AdminPanel</a>
+                        <a href="{{ url('admin') }}">AdminPanel</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -78,7 +77,7 @@
             </div>
 
             <div class="content">
-                <h1>Hallo en welkom op mijn site, mijn verlanglijstje vind je bovenin als je op WishList klikt!</h1>
+                <h1>Hallo en welkom op mijn site, log in om je verlanglijstje te bekijken!</h1>
             </div>
         </div>
     </body>

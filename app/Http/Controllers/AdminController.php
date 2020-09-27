@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Item;
+use App\Wishlist;
 
 class AdminController extends Controller
 {
@@ -25,8 +25,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $items = Item::get();
+        if (auth()->user()->role == "admin") {
+            $lists = Wishlist::get();
 
-        return view('admin', ['items' => $items]);
+            return view('admin', ['wishlists' => $lists]);
+        } else {
+            $lists = Wishlist::where('user_id', auth()->user()->id)->get();
+
+            return view('admin', ['wishlists' => $lists]);
+        }
     }
 }

@@ -18,10 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin', ['uses' => 'AdminController@index'])->name('admin');
 
 Route::post('/admin/item/add', 'ItemsController@create')->name('add_item');
 
 Route::get('/admin/item/delete/{id}', ['uses' => 'ItemsController@delete'])->name('delete_item');
 
-Route::get('/wishlist', 'ItemsController@index')->name('wishlist');
+Route::get('/wishlist/{id}', ['uses' => 'ItemsController@index'])->name('wishlist');
+
+Route::get('/wishlist/{id}/add', 'WishlistController@add')->name('add_item_wishlist');
+
+Route::post('/wishlist/new', 'WishlistController@create')->name('new_wishlist');
+
+Route::get('/wishlist/delete/{id}', ['uses' => 'WishlistController@delete'])->name('delete_wishlist');

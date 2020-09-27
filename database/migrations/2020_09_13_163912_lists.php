@@ -13,7 +13,13 @@ class Lists extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('wishlists', function (Blueprint $table) {
+            $table->bigIncrements('id')->unique();
+            $table->string('name');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class Lists extends Migration
      */
     public function down()
     {
-        //
+       Schema::dropIfExists('wishlists');
     }
 }

@@ -8,11 +8,11 @@ use App\Item;
 
 class ItemsController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $items = Item::get();
+        $items = Item::where('list_id', $id)->get();
 
-        return view('wishlist', ['items' => $items]);
+        return view('wishlist', ['items' => $items, 'list_id' => $id]);
     }
 
     public function create(Request $request) {
@@ -30,6 +30,7 @@ class ItemsController extends Controller
         $item->description = $request->description;
         $item->price = $request->price;
         $item->link = $request->link;
+        $item->list_id = $request->list_id;
 
         $item->save();
 
