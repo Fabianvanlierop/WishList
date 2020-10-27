@@ -22,7 +22,7 @@ Route::get('/admin', ['uses' => 'AdminController@index'])->name('admin');
 
 Route::post('/admin/item/add', 'ItemsController@create')->name('add_item');
 
-Route::get('/admin/item/delete/{id}', ['uses' => 'ItemsController@delete'])->name('delete_item');
+Route::get('/admin/item/delete/{id}', ['uses' => 'ItemsController@delete'])->name('delete_item_wishlist');
 
 Route::get('/wishlist/{id}', ['uses' => 'ItemsController@index'])->name('wishlist');
 

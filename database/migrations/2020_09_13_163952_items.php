@@ -16,7 +16,7 @@ class Items extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('list_id');
-            $table->foreign('list_id')->references('id')->on('wishlists');
+            $table->foreign('list_id')->references('id')->on('wishlists')->onDelete('cascade');
             $table->string('name');
             $table->text('description');
             $table->decimal('price');

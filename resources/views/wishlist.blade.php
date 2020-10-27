@@ -20,6 +20,10 @@
                                     <h1>€{{ $data->price }}</h1>
                                     <h5>Buy me!</h5>
                                 </a>
+                                <br /><br />
+                                <a href="{{ route("delete_item_wishlist", $data->id) }}" class="text-danger">
+                                    <h6>Delete</h6>
+                                </a>
                             </div>
                         </div>
                     </div>

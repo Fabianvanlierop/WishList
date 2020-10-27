@@ -4,13 +4,12 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Http\\Controllers\\Auth",
     "\\app\\Http\\Middleware",
-    "\\public",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\layouts"
+    "\\resources\\views\\layouts",
+    "\\routes"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\Auth\\LoginController.php",
+  "SelectedNode": "\\resources\\views\\add_item.blade.php",
   "PreviewInSolutionExplorer": false
 }
